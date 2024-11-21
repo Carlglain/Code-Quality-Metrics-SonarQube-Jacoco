@@ -1,0 +1,59 @@
+# Maven target directory
+target/
+.mvn/
+mvnw
+mvnw.cmd
+
+# Gradle build directory
+build/
+.gradle/
+gradlew
+gradlew.bat
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# IDE-specific files
+.idea/
+*.iml
+*.class
+*.jar
+*.war
+*.ear
+.settings/
+.project
+.classpath
+# Python Virtual Environments
+venv/
+env/
+.venv/
+
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+egg-info/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Visual Studio Code
+.vscode/
