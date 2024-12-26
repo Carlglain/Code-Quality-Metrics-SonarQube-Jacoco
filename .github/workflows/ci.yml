@@ -21,7 +21,10 @@ jobs:
         with:
           java-version: "17"
           distribution: "adopt"
-
+      - name: Print working directory
+        run: |
+          pwd
+          echo "Current working directory:"
       - name: Build with Maven
         run: mvn clean install
 
