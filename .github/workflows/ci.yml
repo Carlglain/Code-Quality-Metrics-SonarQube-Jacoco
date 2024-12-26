@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main  
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '17'  
+        distribution: 'adopt'
+
+    - name: Build with Maven
+      run: mvn clean install
+
+    - name: Run tests with JaCoCo
+      run: mvn test jacoco:report
+
+    - name: Upload JaCoCo report
+      uses: actions/upload-artifact@v2
+      with:
+        name: jacoco-report
+        path: target/site/jacoco/
+
+    - name: SonarQube Scan
+      run: mvn sonar:sonar -Dsonar.projectKey=group8:awesomeapp \
+                           -Dsonar.host.url=http://your-sonarqube-server:9000 \
+                           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
