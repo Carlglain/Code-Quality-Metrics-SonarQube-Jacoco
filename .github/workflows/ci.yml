@@ -30,8 +30,7 @@ jobs:
       - name: Build with Maven
         run: |
           # Change directory to the project root (if necessary)
-          cd <path/to/your/project/root> 
-          mvn clean install 
+          cd C:\Users\CarlStorm\Desktop\l400\first semester\cef431 software quality tools and methods\Code-Quality-Metrics-SonarQube-Jacoco\simple-calculator && mvn clean install 
 
       - name: Run tests with JaCoCo
         run: mvn test jacoco:report
