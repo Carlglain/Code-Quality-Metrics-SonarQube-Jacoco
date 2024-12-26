@@ -4,14 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>simple-calculator</artifactId>
+    <artifactId>Calculator</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source> <!-- Set your Java version -->
+        <maven.compiler.source>17</maven.compiler.source> <!-- Setting Java version -->
         <maven.compiler.target>17</maven.compiler.target>
-        <sonar.projectKey>com.example:simple-calculator</sonar.projectKey>
-        <sonar.login>sqa_0fe32229b3f4a52a8af8cc5e0e03dd387ce40f38</sonar.login> <!-- Replace with your token -->
+        <sonar.projectKey>Calculator</sonar.projectKey>
+        <sonar.login>sqp_b32cb2bef3f62c20cae8001ab360601d5034c806</sonar.login> 
     </properties>
 
     <dependencies>
@@ -47,7 +47,7 @@
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>4.0.0.4121</version> <!-- Use an appropriate version -->
+                <version>4.0.0.4121</version> 
             </plugin>
         </plugins>
     </build>

@@ -34,4 +34,5 @@ class CalculatorTest {
         });
         assertEquals("Division by zero is not allowed.", exception.getMessage());
     }
+   
 }
