@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
 
     steps:
       - name: Checkout code
@@ -21,12 +21,17 @@ jobs:
         with:
           java-version: "17"
           distribution: "adopt"
+
       - name: Print working directory
         run: |
           pwd
           echo "Current working directory:"
+
       - name: Build with Maven
-        run: mvn clean install
+        run: |
+          # Change directory to the project root (if necessary)
+          cd <path/to/your/project/root> 
+          mvn clean install 
 
       - name: Run tests with JaCoCo
         run: mvn test jacoco:report
@@ -39,5 +44,5 @@ jobs:
 
       - name: SonarQube Scan
         run: mvn sonar:sonar -Dsonar.projectKey=group8:awesomeapp \
-          -Dsonar.host.url=http://your-sonarqube-server:9000 \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+               -Dsonar.host.url=http://your-sonarqube-server:9000 \
+               -Dsonar.login=${{ secrets.SONAR_TOKEN }}
