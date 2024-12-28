@@ -10,9 +10,9 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source> <!-- Setting Java version -->
         <maven.compiler.target>17</maven.compiler.target>
-        <sonar.projectKey>Calculator</sonar.projectKey>
+        <sonar.projectKey>group8:awesomeapp</sonar.projectKey>
         <sonar.host.url>http://localhost:9000</sonar.host.url> <!-- Ensure this is added -->
-        <sonar.login>sqp_b32cb2bef3f62c20cae8001ab360601d5034c806</sonar.login> 
+        <sonar.login>sqa_43eecbbb3bca174b4e56b6ee084d288d7d09e253</sonar.login> 
     </properties>
 
     <dependencies>

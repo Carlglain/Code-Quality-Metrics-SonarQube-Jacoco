@@ -20,17 +20,13 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: "17"
-          distribution: "adopt"
+          distribution: "temurin"  # Consider using "temurin"
 
       - name: Print working directory
-        run: |
-          pwd
-          echo "Current working directory:"
+        run: pwd
 
       - name: Build with Maven
-        run: |
-          # Change directory to the project root (if necessary)
-          cd C:\Users\CarlStorm\Desktop\l400\first semester\cef431 software quality tools and methods\Code-Quality-Metrics-SonarQube-Jacoco\simple-calculator && mvn clean install 
+        run: mvn clean install 
 
       - name: Run tests with JaCoCo
         run: mvn test jacoco:report
@@ -44,4 +40,4 @@ jobs:
       - name: SonarQube Scan
         run: mvn sonar:sonar -Dsonar.projectKey=group8:awesomeapp \
                -Dsonar.host.url=http://your-sonarqube-server:9000 \
-               -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+               -Dsonar.token=${{ secrets.SONAR_TOKEN }}  # Use sonar.token
