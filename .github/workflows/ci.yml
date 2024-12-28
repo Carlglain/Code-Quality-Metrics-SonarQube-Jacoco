@@ -20,24 +20,27 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: "17"
-          distribution: "temurin"  # Consider using "temurin"
+          distribution: "temurin"
 
       - name: Print working directory
         run: pwd
 
+      - name: List directory contents
+        run: ls -la
+
       - name: Build with Maven
-        run: mvn clean install 
+        run: mvn -f simple-calculator/pom.xml clean install 
 
       - name: Run tests with JaCoCo
-        run: mvn test jacoco:report
+        run: mvn -f simple-calculator/pom.xml test jacoco:report
 
       - name: Upload JaCoCo report
         uses: actions/upload-artifact@v3
         with:
           name: jacoco-report
-          path: target/site/jacoco/
+          path: simple-calculator/target/site/jacoco/
 
       - name: SonarQube Scan
-        run: mvn sonar:sonar -Dsonar.projectKey=group8:awesomeapp \
-               -Dsonar.host.url=http://your-sonarqube-server:9000 \
-               -Dsonar.token=${{ secrets.SONAR_TOKEN }}  # Use sonar.token
+        run: mvn -f simple-calculator/pom.xml sonar:sonar -Dsonar.projectKey=group8:awesomeapp \
+               -Dsonar.host.url=http://localhost:9000 \
+               -Dsonar.token=${{ secrets.SONAR_TOKEN }}
