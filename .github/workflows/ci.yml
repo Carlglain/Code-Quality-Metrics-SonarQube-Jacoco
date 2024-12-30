@@ -41,4 +41,4 @@ jobs:
           path: simple-calculator/target/site/jacoco/
 
       - name: SonarQube Scan
-        run: mvn -f simple-calculator/pom.xml sonar:sonar -Dsonar.projectKey=group8 -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqa_43eecbbb3bca174b4e56b6ee084d288d7d09e253
+        run: mvn -f simple-calculator/pom.xml sonar:sonar -Dsonar.projectKey=group8s -Dsonar.host.url=https://sonarcloud.io  -Dsonar.token=1eb1e0eb960796011228cd8a351ce866770595db
